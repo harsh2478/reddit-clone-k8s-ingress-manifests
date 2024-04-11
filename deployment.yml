@@ -16,6 +16,9 @@ spec:
       name: reddit-c1
       labels:
         app: reddit
-      image: kanha05/reddit-clone:replaceImageTag
-      ports:
-      - containerPort: 3000
+    spec:
+      containers:
+        - name: c1
+          image: kanha05/reddit-clone:replaceImageTag
+          ports:
+          - containerPort: 3000
