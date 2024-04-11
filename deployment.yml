@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reddit-deployment
+  labels:
+    app: reddit
+  namespace: default
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: reddit
+  template:
+    metadata:
+      name: reddit-c1
+      labels:
+        app: reddit
+      image: kanha05/reddit-clone:replaceImageTag
+      ports:
+      - containerPort: 3000
